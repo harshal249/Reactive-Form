@@ -1,12 +1,35 @@
+.fill{
+  height: 100%;
+  width: 100px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-right: 15px solid rgb(216, 214, 214);  
+}
 
+.navbar{
+    margin-left: 100px;
+    background-color: none;
+    border-bottom:10px solid rgb(216, 214, 214) ;
+}
+
+.searching{
+    margin-left: 50px;
+    border-radius: 10px;
+    border: 3.5px solid blue;
+}
 
 .title{
     padding-left: 155px;
-    padding-top: 100px;
+    padding-top: 50px;
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: blue;
-
+    
 }
 
 .title1{
@@ -21,8 +44,15 @@
     margin-left: 150px;
     background-color: none;
     padding: 20px;
-    border: 3px solid black;
+    border: 2px solid gray;
     border-radius: 20px;
+    padding-right: 300px;
+}
+
+
+
+.row1{
+    float: right;
 }
 
 
@@ -30,3 +60,9 @@
     margin-top: 10px;
     border-radius: 10px;
 }
+
+@media screen and (max-height: 450px) {
+    .fill {padding-top: 15px;}
+    
+  }
+

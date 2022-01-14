@@ -1,49 +1,61 @@
-<div>
+<div class="fill"></div>
+<header class="navbar">
+    <input type="text" placeholder="Search .." class="searching">
+    <button class="btn btn-secondary" style="margin-right: 10px;">Login</button>
+</header>
 <div class="title">Basic Details :</div>
-<form style="max-width: 750px;" class="firstform">
+<form  class="firstform" [formGroup]="form" style="max-width: 1000px;">
     <div class="row">
-        <div class="form-group col-md-6">
+        <div class=" col-md-6">
             <label for="inputProjectName">Project Name</label>
-            <input type="text" class="form-control" id="inputProjectName">
+            <input type="text" class="form-control" id="inputProjectName" formControlName="projectname"  >
+            <div *ngIf="projectname.touched && projectname.invalid" class="alert alert-danger">This field is required.</div>
         </div>
-        <div class="form-group col-md-6">
+        <div class="col-md-6">
             <label for="inputProjectCode">Project Code</label>
-            <input type="text" class="form-control" id="inputProjectCode">
+            <input type="text" class="form-control" id="inputProjectCode" formControlName="projectcode">
+            <div *ngIf="projectcode.touched && projectcode.invalid" class="alert alert-danger">This field is required.</div>
         </div>
     </div>
+    
 
     <br>
 
     <div class="row">
-        <div class="form-group col-md-6">
+        <div class=" col-md-6">
             <label for="inputProjectStart">Project Start Date</label>
-            <input type="text" class="form-control" id="inputProjectStart">
+            <input type="text" class="form-control" id="inputProjectStart" formControlName="projectstartdate">
+            <div *ngIf="projectstartdate.touched && projectstartdate.invalid" class="alert alert-danger">This field is required.</div>
         </div>
-        <div class="form-group col-md-6">
+        <div class="col-md-6">
             <label for="inputProjectEnd">Project End Date</label>
-            <input type="text" class="form-control" id="inputProjectEnd">
+            <input type="text" class="form-control" id="inputProjectEnd" formControlName="projectenddate">
+            <div *ngIf="projectenddate.touched && projectenddate.invalid" class="alert alert-danger">This field is required.</div>
         </div>
     </div>
+    <br><br>
 </form>
 
 <br><br>
 
 <div class="title1">Project Details :</div>
-<form style="max-width: 750px;" class="firstform">
+<form  class="firstform" style="max-width: 1000px;"  >
     <div class="row">
         <div class="form-group col-md-6">
             <label for="inputProjectName">Longitude</label>
-            <input type="text" class="form-control" id="inputProjectName">
+            <input type="text" class="form-control" id="inputProjectName"  >
         </div>
         <div class="form-group col-md-6">
             <label for="inputProjectCode">Latitude</label>
-            <input type="text" class="form-control" id="inputProjectCode">
+            <input type="text" class="form-control" id="inputProjectCode" >
+            
         </div>
     </div>
 </form>
 
 <br>
-
-<button type="submit" class="btn btn-primary" style="margin-left: 150px;">Submit</button>
-
+<form [formGroup]="form" (ngSubmit)="onSubmit()" >
+    <button type="submit" class="btn btn-primary" style="margin-left: 150px;">Submit</button>
+</form>
 <br><br>
+
